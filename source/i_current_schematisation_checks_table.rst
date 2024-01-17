@@ -46,10 +46,10 @@
      - v2_aggregation_settings.timestep is not of type ['integer']
    * - 0007
      - Error
-     - v2_aggregation_settings.flow_variable is not one of {'simple_infiltration', 'surface_source_sink_discharge', 'wet_surface', 'volume', 'leakage', 'waterlevel', 'interception', 'discharge', 'wet_cross-section', 'rain', 'lateral_discharge', 'pump_discharge', 'flow_velocity'}
+     - v2_aggregation_settings.flow_variable is not one of {'volume', 'rain', 'lateral_discharge', 'wet_cross-section', 'wet_surface', 'simple_infiltration', 'waterlevel', 'discharge', 'flow_velocity', 'interception', 'pump_discharge', 'surface_source_sink_discharge', 'leakage'}
    * - 0007
      - Error
-     - v2_aggregation_settings.aggregation_method is not one of {'current', 'cum_negative', 'avg', 'min', 'sum', 'cum_positive', 'cum', 'max'}
+     - v2_aggregation_settings.aggregation_method is not one of {'cum', 'sum', 'avg', 'min', 'cum_positive', 'max', 'current', 'cum_negative'}
    * - 0008
      - Error
      - id must be a positive signed 32-bit integer.
@@ -136,10 +136,10 @@
      - id must be a positive signed 32-bit integer.
    * - 0001
      - Error
-     - v2_channel.connection_node_start_id refers to a non-existing v2_connection_nodes
+     - v2_channel.connection_node_end_id refers to a non-existing v2_connection_nodes
    * - 0001
      - Error
-     - v2_channel.connection_node_end_id refers to a non-existing v2_connection_nodes
+     - v2_channel.connection_node_start_id refers to a non-existing v2_connection_nodes
    * - 0002
      - Error
      - v2_channel.id should to be unique
@@ -253,10 +253,10 @@
      - id must be a positive signed 32-bit integer.
    * - 0001
      - Error
-     - v2_control.measure_group_id refers to a non-existing v2_control_measure_group
+     - v2_control.control_group_id refers to a non-existing v2_control_group
    * - 0001
      - Error
-     - v2_control.control_group_id refers to a non-existing v2_control_group
+     - v2_control.measure_group_id refers to a non-existing v2_control_measure_group
    * - 0002
      - Error
      - v2_control.id should to be unique
@@ -454,13 +454,13 @@
      - v2_control_memory.is_inverse is not of type ['integer']
    * - 0007
      - Error
-     - v2_control_memory.measure_variable is not one of {'volume', 'discharge', 'waterlevel', 'velocity'}
+     - v2_control_memory.measure_variable is not one of {'discharge', 'volume', 'velocity', 'waterlevel'}
    * - 0007
      - Error
-     - v2_control_memory.action_type is not one of {'set_crest_level', 'set_capacity', 'set_pump_capacity', 'set_discharge_coefficients', 'set_gate_level'}
+     - v2_control_memory.action_type is not one of {'set_pump_capacity', 'set_capacity', 'set_gate_level', 'set_discharge_coefficients', 'set_crest_level'}
    * - 0007
      - Error
-     - v2_control_memory.target_type is not one of {'v2_pumpstation', 'v2_culvert', 'v2_orifice', 'v2_channel', 'v2_pipe', 'v2_weir'}
+     - v2_control_memory.target_type is not one of {'v2_weir', 'v2_pumpstation', 'v2_orifice', 'v2_culvert', 'v2_channel', 'v2_pipe'}
    * - 0008
      - Error
      - id must be a positive signed 32-bit integer.
@@ -547,16 +547,16 @@
      - v2_control_table.target_id is not of type ['integer']
    * - 0007
      - Error
-     - v2_control_table.action_type is not one of {'set_crest_level', 'set_capacity', 'set_pump_capacity', 'set_discharge_coefficients', 'set_gate_level'}
+     - v2_control_table.action_type is not one of {'set_pump_capacity', 'set_capacity', 'set_gate_level', 'set_discharge_coefficients', 'set_crest_level'}
    * - 0007
      - Error
-     - v2_control_table.measure_variable is not one of {'volume', 'discharge', 'waterlevel', 'velocity'}
+     - v2_control_table.measure_variable is not one of {'discharge', 'volume', 'velocity', 'waterlevel'}
    * - 0007
      - Error
-     - v2_control_table.measure_operator is not one of {'<=', '>=', '<', '>'}
+     - v2_control_table.measure_operator is not one of {'<', '<=', '>=', '>'}
    * - 0007
      - Error
-     - v2_control_table.target_type is not one of {'v2_pumpstation', 'v2_culvert', 'v2_orifice', 'v2_channel', 'v2_pipe', 'v2_weir'}
+     - v2_control_table.target_type is not one of {'v2_weir', 'v2_pumpstation', 'v2_orifice', 'v2_culvert', 'v2_channel', 'v2_pipe'}
    * - 0008
      - Error
      - id must be a positive signed 32-bit integer.
@@ -595,10 +595,10 @@
      - v2_control_timed.target_id is not of type ['integer']
    * - 0007
      - Error
-     - v2_control_timed.action_type is not one of {'set_crest_level', 'set_capacity', 'set_pump_capacity', 'set_discharge_coefficients', 'set_gate_level'}
+     - v2_control_timed.action_type is not one of {'set_pump_capacity', 'set_capacity', 'set_gate_level', 'set_discharge_coefficients', 'set_crest_level'}
    * - 0007
      - Error
-     - v2_control_timed.target_type is not one of {'v2_pumpstation', 'v2_culvert', 'v2_orifice', 'v2_channel', 'v2_pipe', 'v2_weir'}
+     - v2_control_timed.target_type is not one of {'v2_weir', 'v2_pumpstation', 'v2_orifice', 'v2_culvert', 'v2_channel', 'v2_pipe'}
    * - 0008
      - Error
      - id must be a positive signed 32-bit integer.
@@ -703,10 +703,10 @@
      - v2_culvert.connection_node_end_id refers to a non-existing v2_connection_nodes
    * - 0001
      - Error
-     - v2_culvert.connection_node_start_id refers to a non-existing v2_connection_nodes
+     - v2_culvert.cross_section_definition_id refers to a non-existing v2_cross_section_definition
    * - 0001
      - Error
-     - v2_culvert.cross_section_definition_id refers to a non-existing v2_cross_section_definition
+     - v2_culvert.connection_node_start_id refers to a non-existing v2_connection_nodes
    * - 0002
      - Error
      - v2_culvert.id should to be unique
@@ -886,10 +886,13 @@
      - id must be a positive signed 32-bit integer.
    * - 0001
      - Error
-     - v2_global_settings.numerical_settings_id refers to a non-existing v2_numerical_settings
+     - v2_global_settings.control_group_id refers to a non-existing v2_control_group
    * - 0001
      - Error
      - v2_global_settings.vegetation_drag_settings_id refers to a non-existing v2_vegetation_drag
+   * - 0001
+     - Error
+     - v2_global_settings.numerical_settings_id refers to a non-existing v2_numerical_settings
    * - 0001
      - Error
      - v2_global_settings.groundwater_settings_id refers to a non-existing v2_groundwater
@@ -899,9 +902,6 @@
    * - 0001
      - Error
      - v2_global_settings.interflow_settings_id refers to a non-existing v2_interflow
-   * - 0001
-     - Error
-     - v2_global_settings.control_group_id refers to a non-existing v2_control_group
    * - 0002
      - Error
      - v2_global_settings.id should to be unique
@@ -1363,10 +1363,10 @@
      - v2_impervious_surface.the_geom has invalid geometry type, expected GEOMETRY
    * - 0007
      - Error
-     - v2_impervious_surface.surface_inclination is not one of {'uitgestrekt', 'vlak', 'hellend'}
+     - v2_impervious_surface.surface_inclination is not one of {'hellend', 'vlak', 'uitgestrekt'}
    * - 0007
      - Error
-     - v2_impervious_surface.surface_class is not one of {'half verhard', 'onverhard', 'gesloten verharding', 'pand', 'open verharding'}
+     - v2_impervious_surface.surface_class is not one of {'open verharding', 'onverhard', 'pand', 'half verhard', 'gesloten verharding'}
    * - 0007
      - Info
      - v2_impervious_surface.zoom_category is not one of {0, 1, 2, 3, 4, 5}
@@ -1375,10 +1375,10 @@
      - id must be a positive signed 32-bit integer.
    * - 0001
      - Error
-     - v2_impervious_surface_map.impervious_surface_id refers to a non-existing v2_impervious_surface
+     - v2_impervious_surface_map.connection_node_id refers to a non-existing v2_connection_nodes
    * - 0001
      - Error
-     - v2_impervious_surface_map.connection_node_id refers to a non-existing v2_connection_nodes
+     - v2_impervious_surface_map.impervious_surface_id refers to a non-existing v2_impervious_surface
    * - 0002
      - Error
      - v2_impervious_surface_map.id should to be unique
@@ -1732,13 +1732,13 @@
      - id must be a positive signed 32-bit integer.
    * - 0001
      - Error
+     - v2_orifice.connection_node_end_id refers to a non-existing v2_connection_nodes
+   * - 0001
+     - Error
      - v2_orifice.connection_node_start_id refers to a non-existing v2_connection_nodes
    * - 0001
      - Error
      - v2_orifice.cross_section_definition_id refers to a non-existing v2_cross_section_definition
-   * - 0001
-     - Error
-     - v2_orifice.connection_node_end_id refers to a non-existing v2_connection_nodes
    * - 0002
      - Error
      - v2_orifice.id should to be unique
@@ -1816,10 +1816,10 @@
      - id must be a positive signed 32-bit integer.
    * - 0001
      - Error
-     - v2_pipe.connection_node_end_id refers to a non-existing v2_connection_nodes
+     - v2_pipe.cross_section_definition_id refers to a non-existing v2_cross_section_definition
    * - 0001
      - Error
-     - v2_pipe.cross_section_definition_id refers to a non-existing v2_cross_section_definition
+     - v2_pipe.connection_node_end_id refers to a non-existing v2_connection_nodes
    * - 0001
      - Error
      - v2_pipe.connection_node_start_id refers to a non-existing v2_connection_nodes
@@ -1981,10 +1981,10 @@
      - id must be a positive signed 32-bit integer.
    * - 0001
      - Error
-     - v2_pumpstation.connection_node_start_id refers to a non-existing v2_connection_nodes
+     - v2_pumpstation.connection_node_end_id refers to a non-existing v2_connection_nodes
    * - 0001
      - Error
-     - v2_pumpstation.connection_node_end_id refers to a non-existing v2_connection_nodes
+     - v2_pumpstation.connection_node_start_id refers to a non-existing v2_connection_nodes
    * - 0002
      - Error
      - v2_pumpstation.id should to be unique
@@ -2266,10 +2266,10 @@
      - id must be a positive signed 32-bit integer.
    * - 0001
      - Error
-     - v2_weir.connection_node_end_id refers to a non-existing v2_connection_nodes
+     - v2_weir.connection_node_start_id refers to a non-existing v2_connection_nodes
    * - 0001
      - Error
-     - v2_weir.connection_node_start_id refers to a non-existing v2_connection_nodes
+     - v2_weir.connection_node_end_id refers to a non-existing v2_connection_nodes
    * - 0001
      - Error
      - v2_weir.cross_section_definition_id refers to a non-existing v2_cross_section_definition
